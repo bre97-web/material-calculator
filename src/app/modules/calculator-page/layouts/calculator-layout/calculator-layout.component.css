@@ -1,0 +1,60 @@
+:host {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    height: 100%;
+
+    --button-width: calc((100vw - 24px - 24px - (3 * 4px)) / 4);
+    --button-height: 96px;
+
+    @media (min-width: 840px) {
+        --button-width: 96px;
+    }
+    @media (min-width: 840px) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 1fr;
+        gap: 24px;
+        padding: 24px;
+        height: calc(100% - 24px - 24px);
+    }
+
+    &>.result {
+        grid-column: 1/2;
+        grid-row: 1/2;
+
+        @media (max-width: 840px) {
+            border-bottom-left-radius: 28px;
+            border-bottom-right-radius: 28px;
+        }
+        padding: 18px;
+
+        background-color: var(--md-sys-color-surface-bright);
+
+        &>.actions {
+            display: flex;
+            justify-content: end;
+            gap: 4px;
+            margin-top: 24px;
+        }
+    }
+
+    &>.user-input {
+        grid-column: 1/2;
+        grid-row: 2/3;
+        padding: 24px;
+    }
+
+    &>.medium-screen-history-part {
+        display: flex;
+        max-height: calc(100%);
+        overflow: auto;
+
+        @media (max-width: 840px) {
+            display: none;
+        }
+        @media (min-width: 840px) {
+            grid-column: 2/3;
+            grid-row: 1/3;
+        }
+    }
+}

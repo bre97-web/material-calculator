@@ -1,0 +1,47 @@
+<calculator-page-product-root-layout>
+    <top-appbar
+        headline="Material Calculator"
+        slot="top-appbar"
+    >
+        <navigation-toggle-icon-button slot="start"></navigation-toggle-icon-button>
+        <theme-change-theme-icon-button slot="end"></theme-change-theme-icon-button>
+        <span slot="headline">
+            <b>
+                Material
+            </b>
+            Calculator
+        </span>
+    </top-appbar>
+
+    <navigation-drawer
+        [routes]="routes"
+        headline="Material Calculator"
+    ></navigation-drawer>
+
+    <calculator-page-calculator-layout>
+        <calculator-controller-calculator-input-display
+            slot="display"
+            [input]="input"
+        ></calculator-controller-calculator-input-display>
+        <calculator-history-show-history-button
+            slot="actions"
+            class="show-in-compact"
+            (click)="handleOpenHistoryOpen()"
+        ></calculator-history-show-history-button>
+        <calculator-history-history-list slot="medium-screen-history"></calculator-history-history-list>
+        <router-outlet></router-outlet>
+    </calculator-page-calculator-layout>
+
+    <div
+        class="top-card"
+        [attr.open]="openHistory"
+    >
+        <header class="header">
+            <md-text-button (click)="handleOpenHistoryClose()">
+                Back
+                <md-icon slot="icon">arrow_back</md-icon>
+            </md-text-button>
+        </header>
+        <calculator-history-history-list></calculator-history-history-list>
+    </div>
+</calculator-page-product-root-layout>

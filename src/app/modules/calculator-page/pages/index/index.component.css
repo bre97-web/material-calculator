@@ -1,0 +1,38 @@
+:host {
+    & .show-in-compact {
+        display: block;
+
+        @media (min-width: 840px) {
+            display: none;
+        }
+    }
+
+    & .top-card {
+        background-color: var(--md-sys-color-surface-bright);
+        z-index: 2;
+        position: fixed;
+        display: block;
+        top: -100%;
+        left: 0;
+        height: 100%;
+        max-height: 100%;
+        width: 100%;
+        overflow: auto;
+
+        transition-property: top, opacity;
+        transition-duration: 500ms;
+
+        @media (min-width: 840px) {
+            display: none;
+        }
+
+        &[open="true"] {
+            top: 0;
+        }
+
+        &>.header {
+            padding: 12px;
+        }
+    }
+
+}

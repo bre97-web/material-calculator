@@ -1,0 +1,13 @@
+@for(field of history; track $index) {
+<span class="history-field">
+    <span class="expression md-typescale-body-medium">
+        {{ field.expression }} =
+    </span>
+
+    <span class="result md-typescale-body-medium">
+        {{ field.result}}
+    </span>
+</span>
+
+<md-divider></md-divider>
+}

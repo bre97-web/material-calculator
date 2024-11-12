@@ -1,0 +1,16 @@
+<div class="result">
+    <ng-content select="[slot='display']"></ng-content>
+
+    <span class="actions">
+        <ng-content select="[slot='actions']"></ng-content>
+    </span>
+</div>
+
+<div class="user-input">
+    <ng-content></ng-content>
+</div>
+
+
+<span class="medium-screen-history-part">
+    <ng-content select="[slot='medium-screen-history']"></ng-content>
+</span>

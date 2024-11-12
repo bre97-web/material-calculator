@@ -1,0 +1,18 @@
+:host {
+    max-height: 128px;
+    outline: none;
+    border: none;
+    background: transparent;
+    color: var(--md-sys-color-on-surface);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    padding: 12px;
+    text-align: right;
+
+    &[no-input] {
+        color: var(--md-sys-color-on-surface-variant);
+        opacity: 0.75;
+    }
+}

@@ -1,0 +1,22 @@
+:host {
+    --top-appbar-height: 64px;
+
+    display: grid;
+    grid-template-columns: 48px 1fr 48px;
+    grid-template-rows: 1fr;
+    align-items: center;
+    padding: 0 24px;
+    height: var(--top-appbar-height);
+    background-color: var(--md-sys-color-surface-bright);
+
+    &>.title {
+        text-align: center;
+        color: var(--md-sys-color-on-surface);
+    }
+
+    &>.actions {
+        grid-column: 3/4;
+        display: flex;
+        gap: 4px;
+    }
+}

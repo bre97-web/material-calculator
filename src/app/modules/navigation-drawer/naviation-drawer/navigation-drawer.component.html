@@ -1,0 +1,33 @@
+<span
+    #navScrim
+    class="scrim"
+></span>
+
+<dialog
+    role="navigation"
+    class="navigation-dialog"
+    #navDialog
+>
+    <div class="container">
+
+        <span class="headline">
+            <span class="md-typescale-title-large">{{ headline }}</span>
+            <md-icon-button (click)="handleDialogClose()">
+                <md-icon>close</md-icon>
+            </md-icon-button>
+        </span>
+
+        <div class="tabs">
+            @for(route of routes; track $index) {
+            <a
+                [routerLink]="route.path"
+                class="tab md-typescale-title-medium"
+            >
+                {{ route.title }}
+                <md-ripple></md-ripple>
+            </a>
+            }
+        </div>
+
+    </div>
+</dialog>

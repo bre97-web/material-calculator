@@ -23,6 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "baseHref": "",
             "outputPath": "dist/material-calculator",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -37,7 +38,10 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/material-symbols/rounded.css",
+              "./node_modules/@material/web/typography/md-typescale-styles.css",
+              "./node_modules/@fontsource/roboto/index.css"
             ],
             "scripts": []
           },

@@ -1,0 +1,105 @@
+:host {
+
+    &>.navigation-dialog {
+        all: unset;
+        display: block;
+        z-index: 1;
+        position: fixed;
+        top: 0;
+        width: min(320px, 75%);
+        height: 100svh;
+        transition-property: opacity, left;
+        transition-duration: 500ms;
+        border-top-right-radius: 28px;
+        border-bottom-right-radius: 28px;
+        overflow: hidden;
+
+        @media (max-width: 600px) {
+            background-color: var(--md-sys-color-surface-container);
+        }
+
+        @media (min-width: 600px) {
+            background-color: var(--md-sys-color-surface);
+        }
+
+        &>.container {
+            display: block;
+            padding: 28px 0;
+
+            &>.headline {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 24px;
+                margin-bottom: 24px;
+                color: var(--md-sys-color-on-surface);
+            }
+
+            &>.tabs {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+
+                &>.tab {
+                    border: none;
+                    outline: none;
+                    text-decoration: none;
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    height: 56px;
+                    padding: 0px 24px;
+                    margin: 0 24px 0 0;
+                    border-top-right-radius: 9999px;
+                    border-bottom-right-radius: 9999px;
+
+                    &.actve {
+                        background-color: var(--md-sys-color-secondary-container);
+                        color: var(--md-sys-color-on-secondary-container);
+                    }
+
+                    &:not(.active) {
+                        background-color: var(--md-sys-color-surface-container);
+                        color: var(--md-sys-color-on-surface);
+                    }
+                }
+            }
+
+        }
+    }
+
+    &>.scrim {
+        background-color: var(--md-sys-color-scrim);
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        transition-property: opacity;
+        transition-duration: 500ms;
+        transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+        position: fixed;
+        z-index: 1;
+    }
+
+    &[open="false"] {
+        &>.scrim {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        &>.navigation-dialog {
+            left: -100%;
+        }
+    }
+
+    &[open="true"] {
+        &>.scrim {
+            opacity: 0.38;
+            pointer-events: all;
+        }
+
+        &>.navigation-dialog {
+            left: 0;
+        }
+    }
+}
